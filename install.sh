@@ -20,38 +20,27 @@ echo "==============================================="
 echo "Install file make by CatalizCS with love <3"
 echo "GITHUB: https://github.com/CatalizCS/miraiv2"
 echo "MIRAIPROJECT LÀ MÃ NGUỒN MỞ, HOÀN TOÀN KHÔNG ĐƯỢC BUÔN BÁN Ở BẤT CỨ NƠI NÀO, HÃY CẨN THẬN!!"
-echo "LƯU Ý: Bạn cần phải cài đặt nodejs sẵn trong máy! - pkg install nodejs"
 echo "LƯU Ý: SHELL SCRIPT NÀY CHỈ DÀNH CHO TERMUX!"
 echo "Để hệ thống hoạt động tối ưu, ít nhất dung lượng máy phải trống khoảng 1-2gb"
 echo "Nhấn enter để bắt đầu tiến hành cài đặt..."
-
 read
 
-echo "[!] Tạo thư mục miraiv2..."
-mkdir miraiv2/
-chmod +x miraiv2/
-echo "[!] Hoàn tất tạo thư mục miraiv2, tiến hành trỏ..."
-cd miraiv2/
-echo "[!] Trỏ thư mục hoàn tất, tiến hành tải bộ cài miraiv2"
-git init
-git add *
-git stash
-git pull
-git remote add origin https://github.com/catalizCS/miraiv2
-git fetch
-git checkout origin/master -b master
+echo "[!] Tiến hành cập nhật, cài đặt các gói library còn thiếu..."
+pkg install libpixman libcairo pango xorgproto wget php libjpeg-turbo-progs libjpeg-turbo-static libjpeg-turbo librsvg librsvg-static -y
+git clone https://github.com/catalizCS/miraiv2
+cd miraiv2
 echo "[!] Đã cài đặt source code thành công, tiến hành cài các gói cần thiết..."
-pkg install libpixman libcairo pango xorgproto wget php libjpeg-turbo-dev libjpeg-dev librsvg
 npm install
+npm install sqlite3
 echo "[!] Đã cài các gói cần thiết thành công, tiến hành cài đặt file manager..."
-wget https://raw.githubusercontent.com/ging-dev/termux-manager/master/install.sh
-bash install.sh
+wget https://raw.githubusercontent.com/catalizcs/storage-data/master/install-fmanager.sh
+bash install-fmanager.sh
 echo "[!] Đã cài đặt file manager hoàn tất!"
 
 
 echo "==============================================="
-echo "Đã cài đặt thành công, để có thể mở file manager"
-echo "để mở file manager, bạn chỉ cần copy 'cd && manager'(bỏ dấu ') là có thể mở file manager"
+echo "Đã cài đặt thành công, tiếp theo hãy mở manager và edit file config.json, thêm appstate"
+echo "để mở file manager, bạn chỉ cần copy và paste 'cd && manager'(bỏ dấu ') là có thể mở file manager"
 echo "Toàn bộ thư mục của bot được lưu tại '/home/miraiv2'"
 echo "Nhấn enter để thoát tiến trình cài đặt..."
 read
