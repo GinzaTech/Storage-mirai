@@ -26,12 +26,11 @@ echo "Nhấn enter để bắt đầu tiến hành cài đặt..."
 read
 
 echo "[!] Tiến hành cập nhật, cài đặt các gói library còn thiếu..."
-pkg install libpixman libcairo pango xorgproto wget php libjpeg-turbo-progs libjpeg-turbo-static libjpeg-turbo librsvg librsvg-static -y
+pkg install libpixman libcairo pango xorgproto wget php libjpeg-turbo-progs libjpeg-turbo-static libjpeg-turbo librsvg librsvg-static nodejs git python -y
 git clone https://github.com/catalizCS/miraiv2
 cd miraiv2
 echo "[!] Đã cài đặt source code thành công, tiến hành cài các gói cần thiết..."
 npm install
-npm install sqlite3
 echo "[!] Đã cài các gói cần thiết thành công, tiến hành cài đặt file manager..."
 wget https://raw.githubusercontent.com/catalizcs/storage-data/master/install-fmanager.sh
 bash install-fmanager.sh
