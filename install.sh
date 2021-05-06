@@ -13,6 +13,7 @@ Special thanks to:
 ===============================================
 Installation file made by CatalizCS with love <3
 GITHUB: https://github.com/CatalizCS/miraiv2
+THIS BOT MAKE FOR ONLY VIETNAMESE USER, IF YOU WANT TO USE THIS PLEASE CONTACT ME
 MIRAIPROJECT LÀ MÃ NGUỒN MỞ, HOÀN TOÀN KHÔNG ĐƯỢC BUÔN BÁN Ở BẤT CỨ NƠI NÀO, HÃY CẨN THẬN!
 LƯU Ý: SHELL SCRIPT NÀY CHỈ DÀNH CHO TERMUX!
 Để hệ thống hoạt động tối ưu, ít nhất dung lượng máy phải trống khoảng 1-2GB.
@@ -24,7 +25,17 @@ read
 echo "==============================================="
 echo "[!] Tiến hành cài đặt các gói library còn thiếu [!]"
 pkg install -y libpixman libcairo pango xorgproto php libjpeg-turbo-progs libjpeg-turbo-static libjpeg-turbo librsvg librsvg-static nodejs git python wget
-git clone https://github.com/catalizCS/miraiv2
+
+read -p 'Chọn 1 để sử dụng bản chính hoặc chọn 2 để sử dụng bản beta: ' choose
+
+if [ choose == "1"  ]
+then
+  urlGet="https://github.com/catalizCS/miraiv2"
+else
+  urlGet="https://github.com/catalizCS/miraiv2 -b features"
+fi
+
+git clone $urlGet
 cd miraiv2
 echo "[!] Đã tải source code thành công, tiến hành cài các gói cần thiết [!]"
 npm i
