@@ -26,16 +26,7 @@ echo "==============================================="
 echo "[!] Tiến hành cài đặt các gói library còn thiếu [!]"
 pkg install -y libpixman libcairo pango xorgproto php libjpeg-turbo-progs libjpeg-turbo-static libjpeg-turbo librsvg librsvg-static nodejs git python wget
 
-read -p 'Chọn 1 để sử dụng bản chính hoặc chọn 2 để sử dụng bản beta: ' choose
-
-if [ choose == "1"  ]
-then
-  urlGet="https://github.com/catalizCS/miraiv2"
-else
-  urlGet="https://github.com/catalizCS/miraiv2 -b features"
-fi
-
-git clone $urlGet
+git clone https://github.com/miraipr0ject/miraiv2
 cd miraiv2
 echo "[!] Đã tải source code thành công, tiến hành cài các gói cần thiết [!]"
 npm install
